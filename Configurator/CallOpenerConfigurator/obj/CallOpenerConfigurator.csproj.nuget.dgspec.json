@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\damir.milosavljevic\\source\\repos\\CallOpenerConfigurator\\CallOpenerConfigurator\\CallOpenerConfigurator.csproj": {}
+    "C:\\Users\\damir.milosavljevic\\Documents\\GitHub\\gsm-call-open\\Configurator\\CallOpenerConfigurator\\CallOpenerConfigurator.csproj": {}
   },
   "projects": {
-    "C:\\Users\\damir.milosavljevic\\source\\repos\\CallOpenerConfigurator\\CallOpenerConfigurator\\CallOpenerConfigurator.csproj": {
+    "C:\\Users\\damir.milosavljevic\\Documents\\GitHub\\gsm-call-open\\Configurator\\CallOpenerConfigurator\\CallOpenerConfigurator.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\damir.milosavljevic\\source\\repos\\CallOpenerConfigurator\\CallOpenerConfigurator\\CallOpenerConfigurator.csproj",
+        "projectUniqueName": "C:\\Users\\damir.milosavljevic\\Documents\\GitHub\\gsm-call-open\\Configurator\\CallOpenerConfigurator\\CallOpenerConfigurator.csproj",
         "projectName": "CallOpenerConfigurator",
-        "projectPath": "C:\\Users\\damir.milosavljevic\\source\\repos\\CallOpenerConfigurator\\CallOpenerConfigurator\\CallOpenerConfigurator.csproj",
+        "projectPath": "C:\\Users\\damir.milosavljevic\\Documents\\GitHub\\gsm-call-open\\Configurator\\CallOpenerConfigurator\\CallOpenerConfigurator.csproj",
         "packagesPath": "C:\\Users\\damir.milosavljevic\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\damir.milosavljevic\\source\\repos\\CallOpenerConfigurator\\CallOpenerConfigurator\\obj\\",
+        "outputPath": "C:\\Users\\damir.milosavljevic\\Documents\\GitHub\\gsm-call-open\\Configurator\\CallOpenerConfigurator\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\damir.milosavljevic\\AppData\\Roaming\\NuGet\\NuGet.Config",

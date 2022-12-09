@@ -126,7 +126,7 @@
             this.txtMaster1.Name = "txtMaster1";
             this.txtMaster1.Size = new System.Drawing.Size(257, 27);
             this.txtMaster1.TabIndex = 18;
-            this.txtMaster1.Text = "+381658180071";
+            this.txtMaster1.Text = "+38165800112";
             // 
             // txtNumbers
             // 
@@ -154,6 +154,7 @@
             this.cmdWrite.Text = "Write 2 GCO";
             this.cmdWrite.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.cmdWrite.UseVisualStyleBackColor = true;
+            this.cmdWrite.Click += new System.EventHandler(this.cmdWrite_Click);
             // 
             // cmdReload
             // 
@@ -170,6 +171,7 @@
             this.cmdReload.Text = "Reload Data";
             this.cmdReload.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.cmdReload.UseVisualStyleBackColor = true;
+            this.cmdReload.Click += new System.EventHandler(this.cmdReload_Click);
             // 
             // statusStrip1
             // 
@@ -228,7 +230,7 @@
             this.emailThisToolStripMenuItem,
             this.txtEmail});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(152, 24);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(46, 24);
             this.fileToolStripMenuItem.Text = "&File";
             // 
             // saveAsCSVToolStripMenuItem
@@ -289,13 +291,13 @@
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(221, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(192, 6);
             // 
             // connectToolStripMenuItem
             // 
             this.connectToolStripMenuItem.Image = global::CallOpenerConfigurator.Properties.Resources.usb_connected_512;
             this.connectToolStripMenuItem.Name = "connectToolStripMenuItem";
-            this.connectToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.connectToolStripMenuItem.Size = new System.Drawing.Size(195, 26);
             this.connectToolStripMenuItem.Text = "Connect";
             this.connectToolStripMenuItem.Click += new System.EventHandler(this.connectToolStripMenuItem_Click);
             // 
@@ -304,21 +306,20 @@
             this.disconnectToolStripMenuItem.Enabled = false;
             this.disconnectToolStripMenuItem.Image = global::CallOpenerConfigurator.Properties.Resources.usb_disconnected_512;
             this.disconnectToolStripMenuItem.Name = "disconnectToolStripMenuItem";
-            this.disconnectToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.disconnectToolStripMenuItem.Size = new System.Drawing.Size(195, 26);
             this.disconnectToolStripMenuItem.Text = "Disconnect";
             this.disconnectToolStripMenuItem.Click += new System.EventHandler(this.disconnectToolStripMenuItem_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(221, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(192, 6);
             // 
             // deviceInfoToolStripMenuItem
             // 
-            this.deviceInfoToolStripMenuItem.Enabled = false;
             this.deviceInfoToolStripMenuItem.Image = global::CallOpenerConfigurator.Properties.Resources.chip_2_512;
             this.deviceInfoToolStripMenuItem.Name = "deviceInfoToolStripMenuItem";
-            this.deviceInfoToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.deviceInfoToolStripMenuItem.Size = new System.Drawing.Size(195, 26);
             this.deviceInfoToolStripMenuItem.Text = "&Device Info";
             this.deviceInfoToolStripMenuItem.Click += new System.EventHandler(this.deviceInfoToolStripMenuItem_Click);
             // 
@@ -348,7 +349,7 @@
             this.txtSiteName.Name = "txtSiteName";
             this.txtSiteName.Size = new System.Drawing.Size(257, 27);
             this.txtSiteName.TabIndex = 30;
-            this.txtSiteName.Text = "Novi Sad - B Ribnikar";
+            this.txtSiteName.Text = "Novi Sad, Bulevar Evrope 2";
             // 
             // tmr
             // 

@@ -7,10 +7,21 @@ using System.Threading.Tasks;
 using System.Threading;
 using System.IO.Ports;
 using CallOpenerConfigurator;
+using System.Globalization;
 
 class Communication
 {
     private static readonly SerialPort _serialPort = new SerialPort();
+    public static string siteName { get; set; }
+    public static string master1 { get; set; }
+    public static string master2 { get; set; }
+    public static string relayDelay { get; set; }
+    public static string numbers { get; set; }
+    public static string infoDeviceName { get; set; }
+    public static string infoDeviceVer { get; set; }
+    public static string infoFirmwareVer { get; set; }
+    public static string infoManufacterDate { get; set; }
+    public static string InfoSN { get; set; }
 
     static bool _continue = false;
     static int _stateMachine = 0;
@@ -89,7 +100,14 @@ class Communication
             }
         }
     }
+    public static void writeAll ()
+    {
 
+    }
+    public static void readAll ()
+    {
+        
+    }
     private static void writeToSerial(string data)
     {
         if (_serialPort.IsOpen == true)
