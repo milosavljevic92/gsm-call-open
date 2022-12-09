@@ -13,6 +13,7 @@ namespace CallOpenerConfigurator
 {
     public partial class frmFwUpgrade : Form
     {
+        public string CommPort;
         public frmFwUpgrade()
         {
             InitializeComponent();
@@ -24,9 +25,9 @@ namespace CallOpenerConfigurator
         }
         private void cmdUpgrade_Click(object sender, EventArgs e)
         {
-            startUpgrade("COM2");
+            startUpgrade(CommPort);
         }
-        private void downloadLatestFirmware (string url, string path)
+        private void downloadLatestFirmware(string url, string path)
         {
             using (WebClient wc = new())
             {
