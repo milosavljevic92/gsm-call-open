@@ -42,6 +42,7 @@ C:\Users\damir.milosavljevic\Documents\GitHub\gsm-call-open\Configurator\CallOpe
 C:\Users\damir.milosavljevic\Documents\GitHub\gsm-call-open\Configurator\CallOpenerConfigurator\obj\Debug\net6.0-windows\CallOpenerConfigurator.csproj.AssemblyReference.cache
 C:\Users\damir.milosavljevic\Documents\GitHub\gsm-call-open\Configurator\CallOpenerConfigurator\obj\Debug\net6.0-windows\CallOpenerConfigurator.frmAbout.resources
 C:\Users\damir.milosavljevic\Documents\GitHub\gsm-call-open\Configurator\CallOpenerConfigurator\obj\Debug\net6.0-windows\CallOpenerConfigurator.frmConfigurator.resources
+C:\Users\damir.milosavljevic\Documents\GitHub\gsm-call-open\Configurator\CallOpenerConfigurator\obj\Debug\net6.0-windows\CallOpenerConfigurator.frmFwUpgrade.resources
 C:\Users\damir.milosavljevic\Documents\GitHub\gsm-call-open\Configurator\CallOpenerConfigurator\obj\Debug\net6.0-windows\CallOpenerConfigurator.Properties.Resources.resources
 C:\Users\damir.milosavljevic\Documents\GitHub\gsm-call-open\Configurator\CallOpenerConfigurator\obj\Debug\net6.0-windows\CallOpenerConfigurator.csproj.GenerateResource.cache
 C:\Users\damir.milosavljevic\Documents\GitHub\gsm-call-open\Configurator\CallOpenerConfigurator\obj\Debug\net6.0-windows\CallOpenerConfigurator.GeneratedMSBuildEditorConfig.editorconfig
@@ -54,4 +55,3 @@ C:\Users\damir.milosavljevic\Documents\GitHub\gsm-call-open\Configurator\CallOpe
 C:\Users\damir.milosavljevic\Documents\GitHub\gsm-call-open\Configurator\CallOpenerConfigurator\obj\Debug\net6.0-windows\CallOpenerConfigurator.pdb
 C:\Users\damir.milosavljevic\Documents\GitHub\gsm-call-open\Configurator\CallOpenerConfigurator\obj\Debug\net6.0-windows\CallOpenerConfigurator.genruntimeconfig.cache
 C:\Users\damir.milosavljevic\Documents\GitHub\gsm-call-open\Configurator\CallOpenerConfigurator\obj\Debug\net6.0-windows\ref\CallOpenerConfigurator.dll
-C:\Users\damir.milosavljevic\Documents\GitHub\gsm-call-open\Configurator\CallOpenerConfigurator\obj\Debug\net6.0-windows\CallOpenerConfigurator.Helper.frmFwUpgrade.resources
