@@ -228,8 +228,8 @@
             this.emailThisToolStripMenuItem,
             this.txtEmail});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(46, 24);
-            this.fileToolStripMenuItem.Text = "File";
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(152, 24);
+            this.fileToolStripMenuItem.Text = "&File";
             // 
             // saveAsCSVToolStripMenuItem
             // 
@@ -277,7 +277,7 @@
             this.deviceInfoToolStripMenuItem});
             this.communicationToolStripMenuItem1.Name = "communicationToolStripMenuItem1";
             this.communicationToolStripMenuItem1.Size = new System.Drawing.Size(128, 24);
-            this.communicationToolStripMenuItem1.Text = "Communication";
+            this.communicationToolStripMenuItem1.Text = "&Communication";
             // 
             // cmbCommPort
             // 
@@ -293,6 +293,7 @@
             // 
             // connectToolStripMenuItem
             // 
+            this.connectToolStripMenuItem.Image = global::CallOpenerConfigurator.Properties.Resources.usb_connected_512;
             this.connectToolStripMenuItem.Name = "connectToolStripMenuItem";
             this.connectToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.connectToolStripMenuItem.Text = "Connect";
@@ -301,6 +302,7 @@
             // disconnectToolStripMenuItem
             // 
             this.disconnectToolStripMenuItem.Enabled = false;
+            this.disconnectToolStripMenuItem.Image = global::CallOpenerConfigurator.Properties.Resources.usb_disconnected_512;
             this.disconnectToolStripMenuItem.Name = "disconnectToolStripMenuItem";
             this.disconnectToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.disconnectToolStripMenuItem.Text = "Disconnect";
@@ -322,9 +324,9 @@
             // 
             // toolStripMenuItem4
             // 
-            this.toolStripMenuItem4.Image = global::CallOpenerConfigurator.Properties.Resources.info_2_512;
             this.toolStripMenuItem4.Name = "toolStripMenuItem4";
-            this.toolStripMenuItem4.Size = new System.Drawing.Size(34, 24);
+            this.toolStripMenuItem4.Size = new System.Drawing.Size(64, 24);
+            this.toolStripMenuItem4.Text = "&About";
             this.toolStripMenuItem4.Click += new System.EventHandler(this.toolStripMenuItem4_Click);
             // 
             // label5
