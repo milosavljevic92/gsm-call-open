@@ -102,7 +102,16 @@ class Communication
     }
     public static void writeAll ()
     {
-
+        writePhoneNumbers();
+        writeConfiguration();
+    }
+    private static void writePhoneNumbers()
+    {
+        writeToSerial("Hello");
+    }
+    private static void writeConfiguration ()
+    {
+        writeToSerial("Hello");
     }
     public static void readAll ()
     {

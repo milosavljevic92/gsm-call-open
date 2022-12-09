@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CallOpenerConfigurator.Helper;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -85,6 +86,7 @@ namespace CallOpenerConfigurator
             cmdReload.Enabled = state;
             cmdWrite.Enabled = state;
             deviceInfoToolStripMenuItem.Enabled = state;
+            deviceFirmwareToolStripMenuItem.Enabled = state;
             disconnectToolStripMenuItem.Enabled = state;
             connectToolStripMenuItem.Enabled = !state;
             cmbCommPort.Enabled = !state;
@@ -146,6 +148,13 @@ namespace CallOpenerConfigurator
             Communication.master2 = txtMaster2.Text;
             Communication.relayDelay = txtRelayDelay.Text;
             Communication.writeAll();
+        }
+
+        private void upgradeFirmwareToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmFwUpgrade nForm = new frmFwUpgrade();
+            nForm.TopLevel = true;
+            nForm.Show();
         }
     }
 }

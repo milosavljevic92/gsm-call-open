@@ -7,5 +7,8 @@
     <Compile Update="frmConfigurator.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Helper\frmFwUpgrade.cs">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
 </Project>

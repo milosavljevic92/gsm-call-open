@@ -57,6 +57,9 @@
             this.disconnectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.deviceInfoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deviceFirmwareToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.upgradeFirmwareToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.factoryRestoreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
             this.label5 = new System.Windows.Forms.Label();
             this.txtSiteName = new System.Windows.Forms.TextBox();
@@ -276,7 +279,8 @@
             this.connectToolStripMenuItem,
             this.disconnectToolStripMenuItem,
             this.toolStripSeparator2,
-            this.deviceInfoToolStripMenuItem});
+            this.deviceInfoToolStripMenuItem,
+            this.deviceFirmwareToolStripMenuItem});
             this.communicationToolStripMenuItem1.Name = "communicationToolStripMenuItem1";
             this.communicationToolStripMenuItem1.Size = new System.Drawing.Size(128, 24);
             this.communicationToolStripMenuItem1.Text = "&Communication";
@@ -291,13 +295,13 @@
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(192, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(221, 6);
             // 
             // connectToolStripMenuItem
             // 
             this.connectToolStripMenuItem.Image = global::CallOpenerConfigurator.Properties.Resources.usb_connected_512;
             this.connectToolStripMenuItem.Name = "connectToolStripMenuItem";
-            this.connectToolStripMenuItem.Size = new System.Drawing.Size(195, 26);
+            this.connectToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.connectToolStripMenuItem.Text = "Connect";
             this.connectToolStripMenuItem.Click += new System.EventHandler(this.connectToolStripMenuItem_Click);
             // 
@@ -306,22 +310,44 @@
             this.disconnectToolStripMenuItem.Enabled = false;
             this.disconnectToolStripMenuItem.Image = global::CallOpenerConfigurator.Properties.Resources.usb_disconnected_512;
             this.disconnectToolStripMenuItem.Name = "disconnectToolStripMenuItem";
-            this.disconnectToolStripMenuItem.Size = new System.Drawing.Size(195, 26);
+            this.disconnectToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.disconnectToolStripMenuItem.Text = "Disconnect";
             this.disconnectToolStripMenuItem.Click += new System.EventHandler(this.disconnectToolStripMenuItem_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(192, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(221, 6);
             // 
             // deviceInfoToolStripMenuItem
             // 
             this.deviceInfoToolStripMenuItem.Image = global::CallOpenerConfigurator.Properties.Resources.chip_2_512;
             this.deviceInfoToolStripMenuItem.Name = "deviceInfoToolStripMenuItem";
-            this.deviceInfoToolStripMenuItem.Size = new System.Drawing.Size(195, 26);
+            this.deviceInfoToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.deviceInfoToolStripMenuItem.Text = "&Device Info";
             this.deviceInfoToolStripMenuItem.Click += new System.EventHandler(this.deviceInfoToolStripMenuItem_Click);
+            // 
+            // deviceFirmwareToolStripMenuItem
+            // 
+            this.deviceFirmwareToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.upgradeFirmwareToolStripMenuItem,
+            this.factoryRestoreToolStripMenuItem});
+            this.deviceFirmwareToolStripMenuItem.Name = "deviceFirmwareToolStripMenuItem";
+            this.deviceFirmwareToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.deviceFirmwareToolStripMenuItem.Text = "Device Tools";
+            // 
+            // upgradeFirmwareToolStripMenuItem
+            // 
+            this.upgradeFirmwareToolStripMenuItem.Name = "upgradeFirmwareToolStripMenuItem";
+            this.upgradeFirmwareToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.upgradeFirmwareToolStripMenuItem.Text = "Upgrade Firmware";
+            this.upgradeFirmwareToolStripMenuItem.Click += new System.EventHandler(this.upgradeFirmwareToolStripMenuItem_Click);
+            // 
+            // factoryRestoreToolStripMenuItem
+            // 
+            this.factoryRestoreToolStripMenuItem.Name = "factoryRestoreToolStripMenuItem";
+            this.factoryRestoreToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.factoryRestoreToolStripMenuItem.Text = "Factory Restore";
             // 
             // toolStripMenuItem4
             // 
@@ -426,5 +452,8 @@
         private ToolStripStatusLabel toolStripStatusLabel3;
         private System.Windows.Forms.Timer tmr;
         private ToolStripTextBox txtEmail;
+        private ToolStripMenuItem deviceFirmwareToolStripMenuItem;
+        private ToolStripMenuItem upgradeFirmwareToolStripMenuItem;
+        private ToolStripMenuItem factoryRestoreToolStripMenuItem;
     }
 }
