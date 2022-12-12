@@ -7,7 +7,6 @@ using System.Threading.Tasks;
 using System.Threading;
 using System.IO.Ports;
 using CallOpenerConfigurator;
-using System.Globalization;
 
 class Communication
 {
@@ -16,12 +15,14 @@ class Communication
     public static string master1 { get; set; }
     public static string master2 { get; set; }
     public static string relayDelay { get; set; }
-    public static string numbers { get; set; }
+    public static string phoneNumbers { get; set; }
     public static string infoDeviceName { get; set; }
     public static string infoDeviceVer { get; set; }
     public static string infoFirmwareVer { get; set; }
     public static string infoManufacterDate { get; set; }
     public static string InfoSN { get; set; }
+
+    public static bool checkIsLive { get; set; } 
 
     static bool _continue = false;
     static int _stateMachine = 0;
@@ -69,29 +70,49 @@ class Communication
         catch { }
         return true;
     }
-    public static bool getDeviceStatus()
-    {
-        _stateMachine = 1;
-        writeToSerial("Hello");
-        return true;
-    }
     private static void Read()
     {
+        string[] buffer;
         while (_continue)
         {
             try
             {
                 if (!checkIsPortOpen()) _continue = false;
                 string inputData = _serialPort.ReadLine();
+                _stateMachine = 1;
                 switch (_stateMachine)
                 {
-                    case 1:
-                        string[] buffer = inputData.Split(',');
-                        //ScaleWeight = buffer[2].Replace(" ", string.Empty);
+                    case 0:
+                        buffer = inputData.Split(';');
+                        if (buffer[0] == "Hi")
+                            checkIsLive = true;
+                        else
+                            checkIsLive = false;
                         break;
-                    case 2:
 
+                    case 1:
+                        buffer = inputData.Split(';');
+                        infoDeviceName = buffer[0];
+                        infoDeviceVer = buffer[1];
+                        infoFirmwareVer = buffer[2];
+                        infoManufacterDate = buffer[3];
+                        InfoSN = buffer[4];
                         break;
+
+                    case 2:
+                        buffer = inputData.Split(';');
+                        siteName = buffer[0];
+                        master1 = buffer[1];
+                        master2 = buffer[2];
+                        relayDelay = buffer[3];
+                        break;
+
+                    case 3:
+                        phoneNumbers = inputData;                  
+                        break;
+
+                    default:
+                       break;
                 }
             }
             catch (Exception ex)
@@ -100,28 +121,45 @@ class Communication
             }
         }
     }
-    public static void writeAll ()
+    public static void writeAll()
     {
         writePhoneNumbers();
         writeConfiguration();
     }
+    public static void readAll()
+    {
+        writeToSerial("");
+    }
+    public static void checkConectivity()
+    {
+        writeToSerial("GetHello");
+    }
+    public static void readDeviceInfo ()
+    {
+        writeToSerial("GetDeviceInfo");
+    }
+    public static void readConfig()
+    {      
+        writeToSerial("GetConfig");
+    }
+    public static void readPhoneNumbers ()
+    {
+        writeToSerial("GetPhoneNumbers");
+    }
     private static void writePhoneNumbers()
     {
-        writeToSerial("Hello");
+        writeToSerial("Set-PhoneNumbers" + " " + phoneNumbers);
     }
-    private static void writeConfiguration ()
+    private static void writeConfiguration()
     {
-        writeToSerial("Hello");
+        writeToSerial("Set-Configuration" + " " + siteName + ";" + master1 + ";" + master2 + ";" + relayDelay);
     }
-    public static void readAll ()
-    {
-        
-    }
+
     private static void writeToSerial(string data)
     {
         if (_serialPort.IsOpen == true)
         {
-            _serialPort.WriteLine($"{data}\r");
+            _serialPort.Write($"{data}");
         }
     }
 }

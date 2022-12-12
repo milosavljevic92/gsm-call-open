@@ -99,12 +99,14 @@ namespace CallOpenerConfigurator
 
         private void deviceInfoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show($"About Device: /r" +
+            Communication.readDeviceInfo();
+            string str =  $"About Device: /r" +
             $"Device Name: {Communication.infoDeviceName} /r" +
             $"Device Ver: {Communication.infoDeviceVer} /r" +
             $"Firmware Ver: {Communication.infoFirmwareVer} /r" +
             $"Manufacter Date: {Communication.infoManufacterDate} /r" +
-            $"SN: {Communication.InfoSN}");
+            $"SN: {Communication.InfoSN}";
+            MessageBox.Show(str);
         }
 
         private void toolStripTextBox1_Click(object sender, EventArgs e)
@@ -128,7 +130,7 @@ namespace CallOpenerConfigurator
         private void cmdReload_Click(object sender, EventArgs e)
         {
             Communication.readAll();
-            txtNumbers.Text = Communication.numbers;
+            txtNumbers.Text = Communication.phoneNumbers;
             txtSiteName.Text = Communication.siteName;
             txtMaster1.Text = Communication.master1;
             txtMaster2.Text = Communication.master2;
@@ -137,7 +139,7 @@ namespace CallOpenerConfigurator
 
         private void cmdWrite_Click(object sender, EventArgs e)
         {
-            Communication.numbers = txtNumbers.Text;
+            Communication.phoneNumbers = txtNumbers.Text;
             Communication.siteName = txtSiteName.Text;
             Communication.master1 = txtMaster1.Text;
             Communication.master2 = txtMaster2.Text;

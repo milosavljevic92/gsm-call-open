@@ -1,79 +1,96 @@
 #include <SoftwareSerial.h>
 #include <EEPROM.h>
 
-#define RELAY  23
+#define SIM800_RX_PIN 3
+#define SIM800_TX_PIN 2
+#define SIM800_RST_PIN 6
+#define RELAY_PIN 13
 
-SoftwareSerial SIM800(8, 7);
+SoftwareSerial SIM800(SIM800_RX_PIN, SIM800_TX_PIN);
 
 String inputString;
-int stateMachine = 0;
+String buffer;
+String phone;
+String temp;
+String oneLine;
+String receiveVal;
+int Sim800l_tx_pause = 200;
+int state_serial = 0;
+int state_sim800 = 0;
 
-buffer.reserve(200);
-phone.reserve(20);
-temp.reserve(200);
-
-pinMode(RELAY, OUTPUT);
-digitalWrite(RELAY, LOW);
+String deviceName = "GCO";
+String deviceVer = "1.0";
+String deviceFirmwareVersion = "0.9";
+String deviceManufactureDate = "1223";
+String deviceSN = "0007";
 
 void setup() {
   Serial.begin(9600);
   SIM800.begin(9600);
+Serial.write("Hello from tecomatic.net");
+  buffer.reserve(200);
+  phone.reserve(20);
+  temp.reserve(200);
 
-  delay(1000);
+  pinMode(RELAY_PIN, OUTPUT);
+  digitalWrite(RELAY_PIN, LOW);
+
+}
+
+void initSim800(){
   SIM800.write("AT\r");  // because of SIM800L autobounding mode
-  delay(1000);
+  delay(Sim800l_tx_pause);
   SIM800.write("AT+IPR=9600\r");  // set baud on SIM800l at 9600
-  delay(1000);
+  delay(Sim800l_tx_pause);
   SIM800.write("AT+CMGF=1\r");  // set SMS mode to text
-  delay(1000);
+  delay(Sim800l_tx_pause);
   SIM800.write("AT+CNMI=2,2,0,0,0\r");
-  delay(1000);
+  delay(Sim800l_tx_pause);
   Serial.print(SIM800.readString());
   SIM800.write("AT+CLIP=1\r\n");
-  delay(1000);
+  delay(Sim800l_tx_pause);
   SIM800.write("AT+SGPIO=0,7,1,0\r");
-  delay(1000);
+  delay(Sim800l_tx_pause);
   SIM800.write("AT+CSCLK=2\r"); //power saving mode of SIM800L
-  delay(1000);
+  delay(Sim800l_tx_pause);
 }
 
 void loop() {
-if(Serial.available() > 0) { 
-  receiveVal = Serial.read(); 
-  switch (reciveVal) {
-    case "Hello":
-      Serial.print("Hi");
-    break
-    case "GetDeviceInfo":
-      Serial.print("GCO;1.0;0.9;0922;0007\r"); //name;device ver;fw ver;dateyear;sn
-    break
-    case "GetPhoneNumbers"
-      Serial.print(readStringFromEEPROM(50));
-    break
-    case "GetConfig"
-      Serial.print(readStringFromEEPROM(50));
-    break
+  if(Serial.available() > 0) { 
+    receiveVal = Serial.readString(); 
+    receiveVal.trim();
+    Serial.print(receiveVal+"\r");
+    if (receiveVal == "GetHello")
+      Serial.print("Hi\r");
+    if (receiveVal == "GetDeviceInfo")
+      Serial.print(deviceName + deviceVer + deviceFirmwareVersion +deviceManufactureDate + deviceSN +"\r");
+    if (receiveVal == "GetPhoneNumbers")      
+      Serial.print(readStringFromEEPROM(50));           
+    if (receiveVal == "GetConfig")  
+      Serial.print(readStringFromEEPROM(0));           
+    if (receiveVal == "SetConfig")      
+      writeStringToEEPROM(1,receiveVal);    
+    if (receiveVal == "SetPhoneNumbers")  
+      writeStringToEEPROM(50,receiveVal);    
   }
-}
-if (SIM800.available() > 0) goto loop;
-  switch (stateMachine) {
-    case 0:
-      //ERROR
-      break
-    case 1:
-      //WriteNewNumberViaSms  
-      break;
-    case 2:
-
-      break;
-    default:
-      if (SIM800.available() > 0) break
-      buffer = SIM800.readStringUntil('\n');
-      Serial.println(buffer);   
-      if (checkInMemory(parseNumber())) triggerRelay ();
-      break;
-  }
+  if (SIM800.available() > 0) {
+      switch (state_sim800) {
+        case 0:
+          //ERROR
+        break;
+        case 1:
+          //WriteNewNumberViaSms  
+        break;
+        default:
+          if (SIM800.available() > 0) break;
+          buffer = SIM800.readStringUntil('\n');
+          Serial.println(buffer);   
+          if (checkInMemory(parseNumber())) triggerRelay();
+        break;
+      }
+   }
 } 
+
 String parseNumber() {
   if (buffer.indexOf("CLIP:") > 0) {
     phone = buffer.substring(buffer.indexOf("+CLIP: ") + 8, buffer.indexOf("+CLIP: ") + 381); //parsing caller number
@@ -84,12 +101,12 @@ String parseNumber() {
   return phone;  
 }
 
-bool checkInMemory (string number) {
+bool checkInMemory(String number) {
   int sa[50], r=0, t=0;
-  temp = readStringFromEEPROM (50)
+  temp = readStringFromEEPROM(50);
 
-  for (int i=0; i < temp.length(); i++) { 
-    if(temp.charAt(i) == ';') { 
+  for (int i=0; i < temp.length(); i++){ 
+    if(temp.charAt(i) == ';'){ 
         if (number == oneLine.substring(r, i).toInt())
             return true;    
         r=(i+1);    
@@ -98,10 +115,10 @@ bool checkInMemory (string number) {
   return false;  
 }
 
-void triggerRelay {
-  digitalWrite(RELAY, HIGH);
+void triggerRelay() {
+  digitalWrite(RELAY_PIN, HIGH);
   delay(1000);
-  digitalWrite(RELAY, LOW);
+  digitalWrite(RELAY_PIN, LOW);
 }
 
 void writeStringToEEPROM(int addrOffset, const String &strToWrite) {
