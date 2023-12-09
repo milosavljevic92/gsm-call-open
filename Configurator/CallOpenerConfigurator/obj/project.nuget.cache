@@ -1,16 +1,16 @@
 {
   "version": 2,
-  "dgSpecHash": "EihNvvV1R6nRIz2mbzEu0EWUwlKE3HtEtoV67utyB4OhpgH8lrdq1w/05geTmhkiR5ZInfgX34VJbFWthlHSiw==",
+  "dgSpecHash": "vxZGaox/KB7HrByQHFGHIwAxA22NV0ZQdp+CtyY7jeEhfPSXpZt2OGyQ+RomLIvenlfwNXiP0YOYZ6VgPOfybA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\damir.milosavljevic\\Documents\\GitHub\\gsm-call-open\\Configurator\\CallOpenerConfigurator\\CallOpenerConfigurator.csproj",
+  "projectFilePath": "C:\\Users\\damir\\Documents\\GitHub\\gsm-call-open\\Configurator\\CallOpenerConfigurator\\CallOpenerConfigurator.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\damir.milosavljevic\\.nuget\\packages\\runtime.linux-arm.runtime.native.system.io.ports\\7.0.0\\runtime.linux-arm.runtime.native.system.io.ports.7.0.0.nupkg.sha512",
-    "C:\\Users\\damir.milosavljevic\\.nuget\\packages\\runtime.linux-arm64.runtime.native.system.io.ports\\7.0.0\\runtime.linux-arm64.runtime.native.system.io.ports.7.0.0.nupkg.sha512",
-    "C:\\Users\\damir.milosavljevic\\.nuget\\packages\\runtime.linux-x64.runtime.native.system.io.ports\\7.0.0\\runtime.linux-x64.runtime.native.system.io.ports.7.0.0.nupkg.sha512",
-    "C:\\Users\\damir.milosavljevic\\.nuget\\packages\\runtime.native.system.io.ports\\7.0.0\\runtime.native.system.io.ports.7.0.0.nupkg.sha512",
-    "C:\\Users\\damir.milosavljevic\\.nuget\\packages\\runtime.osx-arm64.runtime.native.system.io.ports\\7.0.0\\runtime.osx-arm64.runtime.native.system.io.ports.7.0.0.nupkg.sha512",
-    "C:\\Users\\damir.milosavljevic\\.nuget\\packages\\runtime.osx-x64.runtime.native.system.io.ports\\7.0.0\\runtime.osx-x64.runtime.native.system.io.ports.7.0.0.nupkg.sha512",
-    "C:\\Users\\damir.milosavljevic\\.nuget\\packages\\system.io.ports\\7.0.0\\system.io.ports.7.0.0.nupkg.sha512"
+    "C:\\Users\\damir\\.nuget\\packages\\runtime.linux-arm.runtime.native.system.io.ports\\7.0.0\\runtime.linux-arm.runtime.native.system.io.ports.7.0.0.nupkg.sha512",
+    "C:\\Users\\damir\\.nuget\\packages\\runtime.linux-arm64.runtime.native.system.io.ports\\7.0.0\\runtime.linux-arm64.runtime.native.system.io.ports.7.0.0.nupkg.sha512",
+    "C:\\Users\\damir\\.nuget\\packages\\runtime.linux-x64.runtime.native.system.io.ports\\7.0.0\\runtime.linux-x64.runtime.native.system.io.ports.7.0.0.nupkg.sha512",
+    "C:\\Users\\damir\\.nuget\\packages\\runtime.native.system.io.ports\\7.0.0\\runtime.native.system.io.ports.7.0.0.nupkg.sha512",
+    "C:\\Users\\damir\\.nuget\\packages\\runtime.osx-arm64.runtime.native.system.io.ports\\7.0.0\\runtime.osx-arm64.runtime.native.system.io.ports.7.0.0.nupkg.sha512",
+    "C:\\Users\\damir\\.nuget\\packages\\runtime.osx-x64.runtime.native.system.io.ports\\7.0.0\\runtime.osx-x64.runtime.native.system.io.ports.7.0.0.nupkg.sha512",
+    "C:\\Users\\damir\\.nuget\\packages\\system.io.ports\\7.0.0\\system.io.ports.7.0.0.nupkg.sha512"
   ],
   "logs": []
 }
